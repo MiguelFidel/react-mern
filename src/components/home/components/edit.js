@@ -103,12 +103,9 @@ export default function Edit(props) {
                 </div>
                 <div className="mb-4">
                   <label className="form-label ">Profile Pic</label>
-                  <br/>
-                  {inputs.photo === "null" ? 
-                  <>
-                    <input className="form-control mb-2" type="file" onChange={(e) => handleFileChange(e)} name="photo" accept=".jpg"/>
-                    <button className='btn btn-primary ' onClick={(e) => handleUploadPic(e)}>Upload Pic</button>
-                  </>
+                  <input className="form-control mb-2" type="file" onChange={(e) => handleFileChange(e)} name="photo" accept=".jpg"/>
+                  <button className='btn btn-primary' onClick={(e) => handleUploadPic(e)}>Upload Pic</button>&nbsp;
+                  {inputs.photo === "null" ? null
                     : <a href={inputs.photo} className='btn btn-primary'>Download Pic</a>}
                   
                 </div>
