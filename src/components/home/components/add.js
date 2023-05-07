@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { addUser } from '../../../services/api';
 
 export default function Add(props) {
-  const [inputs, setInputs] = useState({photo: "add"});
+  const [inputs, setInputs] = useState({photo: "null"});
 
   const handleInputChange = (e) => {
     const name = e.target.name;

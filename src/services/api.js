@@ -1,9 +1,9 @@
 import Swal from 'sweetalert2'; 
 import axios from 'axios';
 
-
 // BASE URL
 export const instance = axios.create({
+
   baseURL: process.env.REACT_APP_BASE_URL,
   timeout: 1000,
 });
@@ -21,7 +21,22 @@ export const getUser = async() => {
 
 // delete User Api
 export const deleteUser = async(user_id) => {
-    return await instance.delete(`user/delete/${user_id}`)
+    return await instance.delete(`/user/delete/${user_id}`)
+    .then(response => {
+      Swal.fire('Success!', response.data.message, 'success')
+      .then((result) => {
+        window.location.reload();
+        return response.data
+      })
+    })
+    .catch( error => {
+      return error.response.data
+    })
+  }
+
+// Upload Pic Api not working
+  export const uploadPic = (user_id,form) => {
+    instance.post(`user/upload/${user_id}`, form)
     .then(response => {
       Swal.fire('Success!', response.data.message, 'success')
       .then((result) => {
