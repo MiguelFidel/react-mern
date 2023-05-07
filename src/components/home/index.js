@@ -40,7 +40,7 @@ export default function Home(){
                 </div>
                 {loader? <div className='text-center'><CircularProgress /><br/>Please Refresh if it's not working </div>: <DataTable data={data}/>}
             </Paper>
-            <p className='text-center'>Bugs: Server issue when uploading a pic from AWS. There's no success popup on server but it's working on local</p>
+            <p className='text-center'>Bugs: Server issue when uploading a pic to AWS. There's no success popup on server but it's working on local</p>
         </div>
     );
 }
